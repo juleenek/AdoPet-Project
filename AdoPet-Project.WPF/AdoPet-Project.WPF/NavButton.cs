@@ -73,7 +73,7 @@ namespace AdoPet_Project.WPF
             DependencyProperty.Register("Icon", typeof(Geometry), typeof(NavButton), new PropertyMetadata(null));
 
         public static readonly DependencyProperty NavlinkProperty =
-            DependencyProperty.Register("MyProperty", typeof(Uri), typeof(NavButton), new PropertyMetadata(null));
+            DependencyProperty.Register("Navlink", typeof(Uri), typeof(NavButton), new PropertyMetadata(null));
 
 
     }

@@ -6,7 +6,27 @@
         xmlns:local="clr-namespace:AdoPet_Project.WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#f5f0fa">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="132"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
+        <ListBox Background="#f5f0fa" Grid.Column="0" x:Name="sidebar" Margin="0,40,0,40" BorderThickness="0">
+            <local:NavButton  Height="40" Content="Dogs">
+                
+            </local:NavButton>
+            <local:NavButton  Height="40" Content="Dog breeds">
+
+            </local:NavButton>
+            <local:NavButton  Height="40" Content="Cats">
+
+            </local:NavButton>
+            <local:NavButton  Height="40" Content="Cat breeds" >
+
+            </local:NavButton>
+        </ListBox>
+
+        <Frame Grid.Column="1" x:Name="navframe" Background="#fff"/>
     </Grid>
 </Window>
