@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 \\Mac\Home\Desktop\Code\AdoPetProject\AdoPet-Project.WPF\AdoPet-Project.WPF\App.xaml
-21611351110
+6-986062463
 
-6-1937859479
+10505468166
 193-1891726104
-MainWindow.xaml;Themes\Generic.xaml;
+MainWindow.xaml;Pages\CatBreedsPage.xaml;Pages\CatsPage.xaml;Pages\DogBreedsPage.xaml;Pages\DogsPage.xaml;Themes\Generic.xaml;
 
-False
+True
 

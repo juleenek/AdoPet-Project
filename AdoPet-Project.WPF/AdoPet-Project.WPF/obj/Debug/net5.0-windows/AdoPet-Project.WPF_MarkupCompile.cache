@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-\\Mac\Home\Desktop\Code\AdoPet-Project\AdoPet-Project.WPF\AdoPet-Project.WPF\obj\Debug\net5.0-windows\
+\\Mac\Home\Desktop\Code\AdoPetProject\AdoPet-Project.WPF\AdoPet-Project.WPF\obj\Debug\net5.0-windows\
 AdoPet_Project.WPF
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-\\Mac\Home\Desktop\Code\AdoPet-Project\AdoPet-Project.WPF\AdoPet-Project.WPF\App.xaml
-2419903590
+\\Mac\Home\Desktop\Code\AdoPetProject\AdoPet-Project.WPF\AdoPet-Project.WPF\App.xaml
+6-986062463
 
-4-119364884
-193582816078
-MainWindow.xaml;Themes\Generic.xaml;
+8-771232725
+193-1891726104
+MainWindow.xaml;Pages\CatBreedsPage.xaml;Pages\CatsPage.xaml;Pages\DogBreedsPage.xaml;Pages\DogsPage.xaml;Themes\Generic.xaml;
 
 False
 

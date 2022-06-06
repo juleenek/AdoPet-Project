@@ -12,21 +12,21 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <ListBox Background="#f5f0fa" Grid.Column="0" x:Name="sidebar" Margin="0,40,0,40" BorderThickness="0">
-            <local:NavButton  Height="40" Content="Dogs">
+        <ListBox Background="#f5f0fa" Grid.Column="0" SelectionMode="Single" SelectionChanged="sidebar_SelectionChanged" Width="100" x:Name="sidebar" Margin="0,40,0,40" BorderThickness="0">
+            <local:NavButton Navlink="/Pages/DogsPage.xaml" Margin="0 0 0 10" Height="40" Content="Dogs">
                 
             </local:NavButton>
-            <local:NavButton  Height="40" Content="Dog breeds">
+            <local:NavButton Navlink="/Pages/DogBreedsPage.xaml" Margin="0 0 0 10" Height="40" Content="Dog breeds">
 
             </local:NavButton>
-            <local:NavButton  Height="40" Content="Cats">
+            <local:NavButton Navlink="/Pages/CatsPage.xaml" Margin="0 0 0 10" Height="40" Content="Cats">
 
             </local:NavButton>
-            <local:NavButton  Height="40" Content="Cat breeds" >
+            <local:NavButton Navlink="/Pages/CatBreedsPage.xaml" Margin="0 0 0 10" Height="40" Content="Cat breeds" >
 
             </local:NavButton>
         </ListBox>
 
-        <Frame Grid.Column="1" x:Name="navframe" Background="#fff"/>
+        <Frame Grid.Column="1" x:Name="navframe" NavigationUIVisibility="Hidden" Background="#fff"/>
     </Grid>
 </Window>

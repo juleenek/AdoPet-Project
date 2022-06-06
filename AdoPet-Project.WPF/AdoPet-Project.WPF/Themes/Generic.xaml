@@ -12,11 +12,10 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:NavButton}">
                     <Border x:Name = "back"
-                            Background="#ddc9f5"
+                            Background="#ffffff"
                             Margin="0,3,0,0"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="4"
+                            BorderBrush="#d9cae8"
+                            BorderThickness="1"
                             Padding="{TemplateBinding Padding}">
 
                         <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="icon" Text="{TemplateBinding Property=Content}"/> 
@@ -24,10 +23,10 @@
                     
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" TargetName="back" Value="#837296"/>
+                            <Setter Property="Background" TargetName="back" Value="#f7f2fc"/>
                         </Trigger>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" TargetName="back" Value="#625275"/>
+                            <Setter Property="Background" TargetName="back" Value="#e1d5ed"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

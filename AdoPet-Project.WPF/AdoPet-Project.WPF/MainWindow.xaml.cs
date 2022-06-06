@@ -24,5 +24,11 @@ namespace AdoPet_Project.WPF
         {
             InitializeComponent();
         }
+
+        private void sidebar_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selected = sidebar.SelectedItem as NavButton; // Selected NavButton
+            navframe.Navigate(selected.Navlink);
+        }
     }
 }
