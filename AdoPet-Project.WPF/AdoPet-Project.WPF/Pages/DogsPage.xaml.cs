@@ -25,6 +25,14 @@ namespace AdoPet_Project.WPF.Pages
             InitializeComponent();
         }
 
+        public void ClearData()
+        {
+            name_txt.Clear();
+            age_txt.Clear();
+            gender_txt.Clear();
+            breed_txt.Clear();
+        }
+
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -37,7 +45,11 @@ namespace AdoPet_Project.WPF.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            
+        }
+        private void ClearData_Click(object sender, RoutedEventArgs e)
+        {
+            ClearData();
         }
     }
 }
