@@ -13,14 +13,14 @@
         <Label Content="Age" HorizontalAlignment="Left" Margin="16,85,0,0" VerticalAlignment="Top"/>
         <Label Content="Gender" HorizontalAlignment="Left" Margin="16,120,0,0" VerticalAlignment="Top"/>
         <Label Content="Breed" HorizontalAlignment="Left" Margin="20,161,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="name_txt" HorizontalAlignment="Left" Margin="84,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="age_txt" HorizontalAlignment="Left" Margin="84,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="gender_txt" HorizontalAlignment="Left" Margin="84,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="breed_txt" HorizontalAlignment="Left" Margin="84,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <DataGrid x:Name="datagrid" BorderBrush="#d9cae8" Background="#ffff" Margin="20,209,20,48" SelectionChanged="DataGrid_SelectionChanged_1"/>
-        <Button x:Name="createBtn" BorderBrush="#d9cae8" Background="#f7f2fc" Content="Create" HorizontalAlignment="Left" Margin="250,154,0,0" VerticalAlignment="Top" Height="31" Width="76" Click="Button_Click"/>
-        <Button x:Name="updateBtn" BorderBrush="#d9cae8" Background="#f7f2fc" Content="Update" HorizontalAlignment="Left" Margin="350,154,0,0" VerticalAlignment="Top" Height="31" Width="76" Click="Button_Click"/>
-        <Button x:Name="deleteBtn" BorderBrush="#d9cae8" Background="#f7f2fc" Content="Delete" HorizontalAlignment="Left" Margin="450,154,0,0" VerticalAlignment="Top" Height="31" Width="76" Click="Button_Click"/>
+        <TextBox x:Name="name_txt" Text="{Binding ElementName=datagrid, Path=SelectedItem.Name, Mode=OneWay}" HorizontalAlignment="Left" Margin="84,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="age_txt" Text="{Binding ElementName=datagrid, Path=SelectedItem.Age, Mode=OneWay}" HorizontalAlignment="Left" Margin="84,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="gender_txt" Text="{Binding ElementName=datagrid, Path=SelectedItem.Gender, Mode=OneWay}" HorizontalAlignment="Left" Margin="84,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="breed_txt" Text="{Binding ElementName=datagrid, Path=SelectedItem.Breed.Name, Mode=OneWay}" HorizontalAlignment="Left" Margin="84,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <DataGrid x:Name="datagrid" BorderBrush="#d9cae8" Background="#ffff" Margin="20,209,20,48"/>
+        <Button x:Name="createBtn" BorderBrush="#d9cae8" Background="#f7f2fc" Content="Create" HorizontalAlignment="Left" Margin="250,154,0,0" VerticalAlignment="Top" Height="31" Width="76" Click="CreateButton_Click"/>
+        <Button x:Name="updateBtn" BorderBrush="#d9cae8" Background="#f7f2fc" Content="Update" HorizontalAlignment="Left" Margin="350,154,0,0" VerticalAlignment="Top" Height="31" Width="76" Click="UpdateButton_Click"/>
+        <Button x:Name="deleteBtn" BorderBrush="#d9cae8" Background="#f7f2fc" Content="Delete" HorizontalAlignment="Left" Margin="450,154,0,0" VerticalAlignment="Top" Height="31" Width="76" Click="DeleteButton_Click"/>
         <Button x:Name="clearBtn" BorderBrush="#d9cae8" Background="#f7f2fc" Content="Clear" HorizontalAlignment="Left" Margin="550,154,0,0" VerticalAlignment="Top" Height="31" Width="76" Click="ClearData_Click"/>
     </Grid>
 </Page>

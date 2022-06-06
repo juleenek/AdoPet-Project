@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AdoPet_Project.WPF.DataAccess;
+using AdoPet_Project.WPF.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,38 +18,36 @@ using System.Windows.Shapes;
 namespace AdoPet_Project.WPF.Pages
 {
     /// <summary>
-    /// Logika interakcji dla klasy CatBreedsPage.xaml
+    /// Interaction logic for the CatBreedsPage.xaml class
     /// </summary>
     public partial class CatBreedsPage : Page
     {
+        public List<CatBreed> DatabaseCatBreeds { get; private set; }
+
         public CatBreedsPage()
         {
             InitializeComponent();
+            Read();
         }
+        /// <summary>
+        /// Method that clears all data from Textboxes
+        /// </summary>
         public void ClearData()
         {
             breedname_txt.Clear();
-            weight_txt.Clear();
-            height_txt.Clear();
-        }
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void DataGrid_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void ClearData_Click(object sender, RoutedEventArgs e)
         {
             ClearData();
+        }
+        public void Read()
+        {
+            using (DataContext context = new DataContext())
+            {
+                DatabaseCatBreeds = context.CatBreeds.ToList();
+                datagrid.ItemsSource = DatabaseCatBreeds;
+            }
         }
     }
 }

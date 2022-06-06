@@ -24,6 +24,9 @@ namespace AdoPet_Project.WPF.Pages
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Method that clears all data from Textboxes
+        /// </summary>
         public void ClearData()
         {
             breedname_txt.Clear();
