@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "\\\\Mac\\Home\\Desktop\\Code\\AdoPet-Project\\AdoPet-Project.WPF\\AdoPet-Project.WPF\\AdoPet-Project.WPF.csproj": {}
+    "\\\\Mac\\Home\\Desktop\\Code\\AdoPetProject\\AdoPet-Project.WPF\\AdoPet-Project.WPF\\AdoPet-Project.WPF.csproj": {}
   },
   "projects": {
-    "\\\\Mac\\Home\\Desktop\\Code\\AdoPet-Project\\AdoPet-Project.WPF\\AdoPet-Project.WPF\\AdoPet-Project.WPF.csproj": {
+    "\\\\Mac\\Home\\Desktop\\Code\\AdoPetProject\\AdoPet-Project.WPF\\AdoPet-Project.WPF\\AdoPet-Project.WPF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\Code\\AdoPet-Project\\AdoPet-Project.WPF\\AdoPet-Project.WPF\\AdoPet-Project.WPF.csproj",
+        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\Code\\AdoPetProject\\AdoPet-Project.WPF\\AdoPet-Project.WPF\\AdoPet-Project.WPF.csproj",
         "projectName": "AdoPet-Project.WPF",
-        "projectPath": "\\\\Mac\\Home\\Desktop\\Code\\AdoPet-Project\\AdoPet-Project.WPF\\AdoPet-Project.WPF\\AdoPet-Project.WPF.csproj",
+        "projectPath": "\\\\Mac\\Home\\Desktop\\Code\\AdoPetProject\\AdoPet-Project.WPF\\AdoPet-Project.WPF\\AdoPet-Project.WPF.csproj",
         "packagesPath": "C:\\Users\\julialinek\\.nuget\\packages\\",
-        "outputPath": "\\\\Mac\\Home\\Desktop\\Code\\AdoPet-Project\\AdoPet-Project.WPF\\AdoPet-Project.WPF\\obj\\",
+        "outputPath": "\\\\Mac\\Home\\Desktop\\Code\\AdoPetProject\\AdoPet-Project.WPF\\AdoPet-Project.WPF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\julialinek\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -57,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
