@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace AdoPet_Project.WPF.Pages
 {
     /// <summary>
-    /// Interaction logic for the CatBreedsPage.xaml class
+    /// Logika interakcji dla klasy CatBreedsPage.xaml
     /// </summary>
     public partial class CatBreedsPage : Page
     {
@@ -24,9 +24,6 @@ namespace AdoPet_Project.WPF.Pages
         {
             InitializeComponent();
         }
-        /// <summary>
-        /// Method that clears all data from Textboxes
-        /// </summary>
         public void ClearData()
         {
             breedname_txt.Clear();

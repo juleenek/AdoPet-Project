@@ -5,7 +5,6 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace AdoPet_Project.WPF
 {
@@ -14,10 +13,5 @@ namespace AdoPet_Project.WPF
     /// </summary>
     public partial class App : Application
     {
-        protected override void OnStartup(StartupEventArgs e) // Everytime when app start up
-        {
-            DatabaseFacade facade = new DatabaseFacade(new DataContext());
-            facade.EnsureCreated(); // Ensure that DB is created if it doesn't exist 
-        }
     }
 }
