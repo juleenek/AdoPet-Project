@@ -55,7 +55,7 @@ namespace AdoPet_Project.WPF.Pages
         {
             using (DataContext context = new DataContext())
             {
-                var breedName = breedname_txt.Text;
+                var breedName = breedname_txt.Text.ToLower();
 
                 if (breedName != null)
                 {
@@ -79,7 +79,7 @@ namespace AdoPet_Project.WPF.Pages
             {
                 DogBreed selectedDogBreed = datagrid.SelectedItem as DogBreed;
 
-                var breedName = breedname_txt.Text;
+                var breedName = breedname_txt.Text.ToLower();
 
                 if (breedName != null)
                 {

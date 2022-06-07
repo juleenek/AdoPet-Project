@@ -60,10 +60,10 @@ namespace AdoPet_Project.WPF.Pages
         {
             using (DataContext context = new DataContext())
             {
-                var name = name_txt.Text;
+                var name = name_txt.Text.ToLower();
                 var age = age_txt.Text;
-                var gender = gender_txt.Text;
-                var breed = breed_txt.Text;
+                var gender = gender_txt.Text.ToLower();
+                var breed = breed_txt.Text.ToLower();
 
                 if (name != null && age != null && gender != null && breed != null)
                 {
@@ -113,10 +113,10 @@ namespace AdoPet_Project.WPF.Pages
             {
                 Cat selectedCat = datagrid.SelectedItem as Cat;
 
-                var name = name_txt.Text;
+                var name = name_txt.Text.ToLower();
                 var age = age_txt.Text;
-                var gender = gender_txt.Text;
-                var breed = breed_txt.Text;
+                var gender = gender_txt.Text.ToLower();
+                var breed = breed_txt.Text.ToLower();
 
                 if (name != null && age != null && gender != null && breed != null)
                 {
