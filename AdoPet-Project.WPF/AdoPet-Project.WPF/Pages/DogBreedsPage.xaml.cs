@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdoPet_Project.WPF.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,13 +17,16 @@ using System.Windows.Shapes;
 namespace AdoPet_Project.WPF.Pages
 {
     /// <summary>
-    /// Logika interakcji dla klasy DogBreedsPage.xaml
+    /// Interaction logic for the DogBreedsPage.xaml class
     /// </summary>
     public partial class DogBreedsPage : Page
     {
+        public List<DogBreed> DatabaseDogBreeds { get; private set; }
+
         public DogBreedsPage()
         {
             InitializeComponent();
+            Read();
         }
         /// <summary>
         /// Method that clears all data from Textboxes
@@ -30,26 +34,86 @@ namespace AdoPet_Project.WPF.Pages
         public void ClearData()
         {
             breedname_txt.Clear();
-            weight_txt.Clear();
-            height_txt.Clear();
-        }
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void DataGrid_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
         private void ClearData_Click(object sender, RoutedEventArgs e)
         {
             ClearData();
+        }
+        public void Read()
+        {
+            using (DataContext context = new DataContext())
+            {
+                DatabaseDogBreeds = context.DogBreeds.ToList();
+                datagrid.ItemsSource = DatabaseDogBreeds;
+            }
+        }
+        /// <summary>
+        /// Create a Breed of Dog
+        /// </summary>
+        public void Create()
+        {
+            using (DataContext context = new DataContext())
+            {
+                var breedName = breedname_txt.Text;
+
+                if (breedName != null)
+                {
+                    context.DogBreeds.Add(new Models.DogBreed()
+                    {
+                        BreedName = breedName,
+                    });
+                    context.SaveChanges();
+                    Read();
+                }
+
+            }
+        }
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
+        {
+            Create();
+        }
+        public void Update()
+        {
+            using (DataContext context = new DataContext())
+            {
+                DogBreed selectedDogBreed = datagrid.SelectedItem as DogBreed;
+
+                var breedName = breedname_txt.Text;
+
+                if (breedName != null)
+                {
+                    DogBreed dogBreed = context.DogBreeds.Find(selectedDogBreed.Id);
+                    dogBreed.BreedName = breedName;
+
+                    context.SaveChanges();
+                    Read();
+                }
+
+            }
+        }
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            Update();
+        }
+        public void Delete()
+        {
+            using (DataContext context = new DataContext())
+            {
+                DogBreed selectedDogBreed = datagrid.SelectedItem as DogBreed;
+
+                if (selectedDogBreed != null)
+                {
+                    DogBreed dogBreed = context.DogBreeds.Single(x => x.Id == selectedDogBreed.Id);
+                    context.Remove(dogBreed);
+                    context.SaveChanges();
+                    Read();
+                }
+
+            }
+        }
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            Delete();
         }
     }
 }
