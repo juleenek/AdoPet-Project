@@ -67,17 +67,31 @@ namespace AdoPet_Project.WPF.Pages
 
                 if (name != null && age != null && gender != null && breed != null)
                 {
-                    context.Cats.Add(new Models.Cat()
+                    try
                     {
-                        Name = name,
-                        Age = byte.Parse(age),
-                        Gender = (Gender)Enum.Parse(typeof(Gender), gender),
-                        Breed = new Models.CatBreed() { BreedName = breed }
-                    });
+                        var catBreed = context.CatBreeds.Single(x => x.BreedName == breed);
+                        context.Cats.Add(new Models.Cat()
+                        {
+                            Name = name,
+                            Age = byte.Parse(age),
+                            Gender = (Gender)Enum.Parse(typeof(Gender), gender),
+                            Breed = catBreed
+                        });
+                    }
+                    catch (Exception)
+                    {
+                        context.Cats.Add(new Models.Cat()
+                        {
+                            Name = name,
+                            Age = byte.Parse(age),
+                            Gender = (Gender)Enum.Parse(typeof(Gender), gender),
+                            Breed = new Models.CatBreed() { BreedName = breed }
+                        });
+                    }
                     context.SaveChanges();
                     Read();
+
                 }
-         
             }
         }
         private void CreateButton_Click(object sender, RoutedEventArgs e)

@@ -49,5 +49,73 @@ namespace AdoPet_Project.WPF.Pages
                 datagrid.ItemsSource = DatabaseCatBreeds;
             }
         }
+        /// <summary>
+        /// Create a Breed of Cat
+        /// </summary>
+        public void Create()
+        {
+            using (DataContext context = new DataContext())
+            {
+                var breedName = breedname_txt.Text;
+
+                if (breedName != null)
+                {
+                    context.CatBreeds.Add(new Models.CatBreed()
+                    {
+                        BreedName = breedName,
+                    });
+                    context.SaveChanges();
+                    Read();
+                }
+
+            }
+        }
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
+        {
+            Create();
+        }
+        public void Update()
+        {
+            using (DataContext context = new DataContext())
+            {
+                CatBreed selectedCatBreed = datagrid.SelectedItem as CatBreed;
+
+                var breedName = breedname_txt.Text;
+
+                if (breedName != null)
+                {
+                    CatBreed catBreed = context.CatBreeds.Find(selectedCatBreed.Id);
+                    catBreed.BreedName = breedName;                 
+
+                    context.SaveChanges();
+                    Read();
+                }
+
+            }
+        }
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            Update();
+        }
+        public void Delete()
+        {
+            using (DataContext context = new DataContext())
+            {
+                CatBreed selectedCatBreed = datagrid.SelectedItem as CatBreed;
+
+                if (selectedCatBreed != null)
+                {
+                    CatBreed catBreed = context.CatBreeds.Single(x => x.Id == selectedCatBreed.Id);
+                    context.Remove(catBreed);
+                    context.SaveChanges();
+                    Read();
+                }
+
+            }
+        }
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            Delete();
+        }
     }
 }

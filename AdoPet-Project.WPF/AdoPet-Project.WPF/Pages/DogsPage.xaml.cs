@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AdoPet_Project.WPF.Enums;
+using AdoPet_Project.WPF.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,12 @@ namespace AdoPet_Project.WPF.Pages
     /// </summary>
     public partial class DogsPage : Page
     {
+        public List<Dog> DatabaseDogs { get; private set; }
+
         public DogsPage()
-        {
+        {           
             InitializeComponent();
+            Read();
         }
         /// <summary>
         /// Method that clears all data from Textboxes
@@ -34,24 +39,112 @@ namespace AdoPet_Project.WPF.Pages
             gender_txt.Clear();
             breed_txt.Clear();
         }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void DataGrid_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
         private void ClearData_Click(object sender, RoutedEventArgs e)
         {
             ClearData();
+        }
+        public void Read()
+        {
+            using (DataContext context = new DataContext())
+            {
+                DatabaseDogs = context.Dogs.ToList();
+                datagrid.ItemsSource = DatabaseDogs;
+            }
+        }
+        /// <summary>
+        /// Create a Dog
+        /// </summary>
+        public void Create()
+        {
+            using (DataContext context = new DataContext())
+            {
+                var name = name_txt.Text;
+                var age = age_txt.Text;
+                var gender = gender_txt.Text;
+                var breed = breed_txt.Text;
+
+                if (name != null && age != null && gender != null && breed != null)
+                {
+                    try
+                    {
+                        var dogBreed = context.DogBreeds.Single(x => x.BreedName == breed);
+                        context.Dogs.Add(new Models.Dog()
+                        {
+                            Name = name,
+                            Age = byte.Parse(age),
+                            Gender = (Gender)Enum.Parse(typeof(Gender), gender),
+                            Breed = dogBreed
+                        });
+                    }
+                    catch (Exception)
+                    {
+                        context.Dogs.Add(new Models.Dog()
+                        {
+                            Name = name,
+                            Age = byte.Parse(age),
+                            Gender = (Gender)Enum.Parse(typeof(Gender), gender),
+                            Breed = new Models.DogBreed() { BreedName = breed }
+                        });
+                    }
+                    context.SaveChanges();
+                    Read();
+
+                }
+            }
+        }
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
+        {
+            Create();
+        }
+        public void Update()
+        {
+            using (DataContext context = new DataContext())
+            {
+                Dog selectedDog = datagrid.SelectedItem as Dog;
+
+                var name = name_txt.Text;
+                var age = age_txt.Text;
+                var gender = gender_txt.Text;
+                var breed = breed_txt.Text;
+
+                if (name != null && age != null && gender != null && breed != null)
+                {
+                    Dog dog = context.Dogs.Find(selectedDog.Id);
+
+                    dog.Name = name;
+                    dog.Age = byte.Parse(age);
+                    dog.Gender = (Gender)Enum.Parse(typeof(Gender), gender);
+                    dog.Breed = new Models.DogBreed() { BreedName = breed };
+
+                    context.SaveChanges();
+                    Read();
+                }
+
+            }
+        }
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            Update();
+        }
+        public void Delete()
+        {
+            using (DataContext context = new DataContext())
+            {
+                Dog selectedDog = datagrid.SelectedItem as Dog;
+
+                if (selectedDog != null)
+                {
+                    Dog dog = context.Dogs.Single(x => x.Id == selectedDog.Id);
+                    context.Remove(dog);
+                    context.SaveChanges();
+                    Read();
+                }
+
+            }
+        }
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            Delete();
         }
     }
 }
