@@ -65,9 +65,19 @@ namespace AdoPet_Project.WPF.Pages
 
                 if (name != null && age != null && gender != null && breed != null)
                 {
+                    DogBreed dogBreed;
+
                     try
                     {
-                        var dogBreed = context.DogBreeds.Single(x => x.BreedName == breed);
+                        dogBreed = context.DogBreeds.Single(x => x.BreedName == breed);
+                    }
+                    catch (Exception)
+                    {
+                        dogBreed = new Models.DogBreed() { BreedName = breed };
+                    }
+
+                    try
+                    {
                         context.Dogs.Add(new Models.Dog()
                         {
                             Name = name,
@@ -76,16 +86,15 @@ namespace AdoPet_Project.WPF.Pages
                             Breed = dogBreed
                         });
                     }
-                    catch (Exception)
+                    catch (ArgumentException)
                     {
-                        context.Dogs.Add(new Models.Dog()
-                        {
-                            Name = name,
-                            Age = byte.Parse(age),
-                            Gender = (Gender)Enum.Parse(typeof(Gender), gender),
-                            Breed = new Models.DogBreed() { BreedName = breed }
-                        });
+                        MessageBox.Show("Please select a male or female gender.");
                     }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Please enter age in the correct format.");
+                    }
+
                     context.SaveChanges();
                     Read();
 

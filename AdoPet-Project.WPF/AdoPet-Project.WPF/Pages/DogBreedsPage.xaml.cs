@@ -1,4 +1,5 @@
 ﻿using AdoPet_Project.WPF.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -102,11 +103,18 @@ namespace AdoPet_Project.WPF.Pages
                 DogBreed selectedDogBreed = datagrid.SelectedItem as DogBreed;
 
                 if (selectedDogBreed != null)
-                {
+                { 
                     DogBreed dogBreed = context.DogBreeds.Single(x => x.Id == selectedDogBreed.Id);
                     context.Remove(dogBreed);
-                    context.SaveChanges();
-                    Read();
+                    try
+                    {
+                        context.SaveChanges();
+                        Read();
+                    }
+                    catch (DbUpdateException)
+                    {
+                        MessageBox.Show("You cannot delete a breed if there is a dog that owns it. Please remove the animal first, then breed.");
+                    }                   
                 }
 
             }

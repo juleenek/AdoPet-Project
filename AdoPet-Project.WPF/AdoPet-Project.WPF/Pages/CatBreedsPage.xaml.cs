@@ -1,5 +1,6 @@
 ﻿using AdoPet_Project.WPF.DataAccess;
 using AdoPet_Project.WPF.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -107,8 +108,15 @@ namespace AdoPet_Project.WPF.Pages
                 {
                     CatBreed catBreed = context.CatBreeds.Single(x => x.Id == selectedCatBreed.Id);
                     context.Remove(catBreed);
-                    context.SaveChanges();
-                    Read();
+                    try
+                    {
+                        context.SaveChanges();
+                        Read();
+                    }
+                    catch (DbUpdateException)
+                    {
+                        MessageBox.Show("You cannot delete a breed if there is a cat that owns it. Please remove the animal first, then breed.");
+                    }
                 }
 
             }
