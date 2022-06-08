@@ -48,7 +48,8 @@ namespace AdoPet_Project.WPF.Pages
             using (DataContext context = new DataContext())
             {
                 DatabaseDogs = context.Dogs.ToList();
-                datagrid.ItemsSource = DatabaseDogs;
+                datagrid.ItemsSource = DatabaseDogs; 
+               
             }
         }
         /// <summary>
@@ -83,6 +84,7 @@ namespace AdoPet_Project.WPF.Pages
                             Name = name,
                             Age = byte.Parse(age),
                             Gender = (Gender)Enum.Parse(typeof(Gender), gender),
+                            BreedName = breed,
                             Breed = dogBreed
                         });
                     }
@@ -124,6 +126,7 @@ namespace AdoPet_Project.WPF.Pages
                     dog.Age = byte.Parse(age);
                     dog.Gender = (Gender)Enum.Parse(typeof(Gender), gender);
                     dog.Breed = new Models.DogBreed() { BreedName = breed };
+                    dog.BreedName = breed;
 
                     context.SaveChanges();
                     Read();

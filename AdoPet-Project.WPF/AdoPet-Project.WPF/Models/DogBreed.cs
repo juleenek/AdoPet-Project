@@ -8,5 +8,6 @@ namespace AdoPet_Project.WPF.Models
         public int Id { get; set; }
         [Required]
         public string BreedName { get; set; }
+
     }
 }

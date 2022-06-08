@@ -1,4 +1,5 @@
 ﻿using AdoPet_Project.WPF.Enums;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace AdoPet_Project.WPF.Models
@@ -8,12 +9,13 @@ namespace AdoPet_Project.WPF.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public byte Age { get; set; }
-        [Required]
         public string Name { get; set; }
         [Required]
-        public Gender Gender { get; set; }
+        public byte Age { get; set; }
         [Required]
+        public Gender Gender { get; set; }
+        public string BreedName { get; set; }
         public DogBreed Breed { get; set; }
+
     }
 }

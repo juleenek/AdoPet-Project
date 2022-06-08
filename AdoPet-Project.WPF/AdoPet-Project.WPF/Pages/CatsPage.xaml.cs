@@ -85,6 +85,7 @@ namespace AdoPet_Project.WPF.Pages
                             Name = name,
                             Age = byte.Parse(age),
                             Gender = (Gender)Enum.Parse(typeof(Gender), gender),
+                            BreedName = breed,
                             Breed = catBreed
                         });
                     }
@@ -126,6 +127,7 @@ namespace AdoPet_Project.WPF.Pages
                     cat.Age = byte.Parse(age);
                     cat.Gender = (Gender)Enum.Parse(typeof(Gender), gender);
                     cat.Breed = new Models.CatBreed() { BreedName = breed };
+                    cat.BreedName = breed;
 
                     context.SaveChanges();
                     Read();
