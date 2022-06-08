@@ -66,3 +66,5 @@
 \\Mac\Home\Desktop\Code\AdoPetProject\AdoPet-Project.WPF\AdoPet-Project.WPF\obj\Debug\net5.0-windows\AdoPet-Project.WPF.pdb
 \\Mac\Home\Desktop\Code\AdoPetProject\AdoPet-Project.WPF\AdoPet-Project.WPF\obj\Debug\net5.0-windows\AdoPet-Project.WPF.genruntimeconfig.cache
 \\Mac\Home\Desktop\Code\AdoPetProject\AdoPet-Project.WPF\AdoPet-Project.WPF\obj\Debug\net5.0-windows\ref\AdoPet-Project.WPF.dll
+\\Mac\Home\Desktop\Code\AdoPetProject\AdoPet-Project.WPF\AdoPet-Project.WPF\obj\Debug\net5.0-windows\Pages\HomePage.g.cs
+\\Mac\Home\Desktop\Code\AdoPetProject\AdoPet-Project.WPF\AdoPet-Project.WPF\obj\Debug\net5.0-windows\Pages\HomePage.baml

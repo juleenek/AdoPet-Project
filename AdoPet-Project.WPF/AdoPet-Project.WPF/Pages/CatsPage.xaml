@@ -26,9 +26,9 @@
                 <DataGridTextColumn Width="150" Binding="{Binding BreedName}" Header="Breed"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="createBtn" BorderBrush="#d9cae8" Background="#f7f2fc" Content="Create" HorizontalAlignment="Left" Margin="250,154,0,0" VerticalAlignment="Top" Height="31" Width="76" Click="CreateButton_Click"/>
-        <Button x:Name="updateBtn" BorderBrush="#d9cae8" Background="#f7f2fc" Content="Update" HorizontalAlignment="Left" Margin="350,154,0,0" VerticalAlignment="Top" Height="31" Width="76" Click="UpdateButton_Click"/>
-        <Button x:Name="deleteBtn" BorderBrush="#d9cae8" Background="#f7f2fc" Content="Delete" HorizontalAlignment="Left" Margin="450,154,0,0" VerticalAlignment="Top" Height="31" Width="76" Click="DeleteButton_Click"/>
-        <Button x:Name="clearBtn" BorderBrush="#d9cae8" Background="#f7f2fc" Content="Clear" HorizontalAlignment="Left" Margin="550,154,0,0" VerticalAlignment="Top" Height="31" Width="76" Click="ClearData_Click"/>
+        <Button x:Name="createBtn" Background="#dbbdcd" Content="Create" HorizontalAlignment="Left" Margin="250,154,0,0" VerticalAlignment="Top" Height="31" Width="76" Click="CreateButton_Click"/>
+        <Button x:Name="updateBtn" Background="#dbbdcd" Content="Update" HorizontalAlignment="Left" Margin="350,154,0,0" VerticalAlignment="Top" Height="31" Width="76" Click="UpdateButton_Click"/>
+        <Button x:Name="deleteBtn" Background="#dbbdcd" Content="Delete" HorizontalAlignment="Left" Margin="450,154,0,0" VerticalAlignment="Top" Height="31" Width="76" Click="DeleteButton_Click"/>
+        <Button x:Name="clearBtn" Background="#dbbdcd" Content="Clear" HorizontalAlignment="Left" Margin="550,154,0,0" VerticalAlignment="Top" Height="31" Width="76" Click="ClearData_Click"/>
     </Grid>
 </Page>

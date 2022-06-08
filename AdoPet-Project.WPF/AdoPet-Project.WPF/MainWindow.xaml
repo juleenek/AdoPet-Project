@@ -6,13 +6,16 @@
         xmlns:local="clr-namespace:AdoPet_Project.WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#f5f0fa">
+    <Grid Background="#e7cfdc">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="132"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <ListBox Background="#f5f0fa" Grid.Column="0" SelectionMode="Single" SelectionChanged="sidebar_SelectionChanged" Width="100" x:Name="sidebar" Margin="0,40,0,40" BorderThickness="0">
+        <ListBox Background="#e7cfdc" Grid.Column="0" SelectionMode="Single" SelectionChanged="sidebar_SelectionChanged" Width="100" x:Name="sidebar" Margin="0,40,0,40" BorderThickness="0">
+            <local:NavButton Navlink="/Pages/HomePage.xaml" Margin="0 0 0 10" Height="40" Content="Home">
+
+            </local:NavButton>
             <local:NavButton Navlink="/Pages/DogsPage.xaml" Margin="0 0 0 10" Height="40" Content="Dogs">
 
             </local:NavButton>
@@ -27,10 +30,6 @@
             </local:NavButton>
         </ListBox>
 
-        <Frame Grid.Column="1" x:Name="navframe" NavigationUIVisibility="Hidden" Background="#fff"/>
-        <Image Height="100" Width="100"/>
-        <Image Source="piesek1.jpg" Grid.Column="1" HorizontalAlignment="Center" Height="452" VerticalAlignment="Top" Width="668"/>
-        <Label Grid.Column="1" Content="Adopet" HorizontalAlignment="Left" Margin="42,75,0,0" VerticalAlignment="Top" FontSize="72" FontFamily="Ink Free" Foreground="#FF584050"/>
-        <Label Grid.Column="1" Content="Aplikacja zarządzająca zwierzętami&#xD;&#xA;znajdującymi się w schronisku" HorizontalAlignment="Left" Margin="38,0,0,0" VerticalAlignment="Center" FontSize="20" Foreground="#FF584050" FontFamily="Segoe UI Light" Height="85" Width="385"/>
+        <Frame Source="/Pages/HomePage.xaml" Grid.Column="1" x:Name="navframe" NavigationUIVisibility="Hidden" Background="#fff"/>
     </Grid>
 </Window>
