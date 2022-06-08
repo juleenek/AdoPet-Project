@@ -29,6 +29,8 @@
 
         <Frame Grid.Column="1" x:Name="navframe" NavigationUIVisibility="Hidden" Background="#fff"/>
         <Image Height="100" Width="100"/>
-        <Image Grid.Column="1" HorizontalAlignment="Left" Height="217" Margin="67,136,0,0" VerticalAlignment="Top" Width="517"/>
+        <Image Source="piesek1.jpg" Grid.Column="1" HorizontalAlignment="Center" Height="452" VerticalAlignment="Top" Width="668"/>
+        <Label Grid.Column="1" Content="Adopet" HorizontalAlignment="Left" Margin="42,75,0,0" VerticalAlignment="Top" FontSize="72" FontFamily="Ink Free" Foreground="#FF584050"/>
+        <Label Grid.Column="1" Content="Aplikacja zarządzająca zwierzętami&#xD;&#xA;znajdującymi się w schronisku" HorizontalAlignment="Left" Margin="38,0,0,0" VerticalAlignment="Center" FontSize="20" Foreground="#FF584050" FontFamily="Segoe UI Light" Height="85" Width="385"/>
     </Grid>
 </Window>
