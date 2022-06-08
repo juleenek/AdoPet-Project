@@ -14,6 +14,7 @@ namespace AdoPet_Project.WPF.Models
         [Required]
         public Gender Gender { get; set; }
         public string BreedName { get; set; }
+        [Required]
         public CatBreed Breed { get; set; }
     }
 }

@@ -65,8 +65,11 @@ namespace AdoPet_Project.WPF.Pages
                 var gender = gender_txt.Text.ToLower();
                 var breed = breed_txt.Text.ToLower();
 
-                if (name != null && age != null && gender != null && breed != null)
+                if(name == "" || age == "" || gender == "" || breed == "")
                 {
+                    MessageBox.Show("Please enter all data.");
+                }
+                else {
                     CatBreed catBreed;
 
                     try
@@ -100,8 +103,7 @@ namespace AdoPet_Project.WPF.Pages
 
                     context.SaveChanges();
                     Read();
-
-                }
+                }              
             }
         }
         private void CreateButton_Click(object sender, RoutedEventArgs e)
@@ -109,7 +111,7 @@ namespace AdoPet_Project.WPF.Pages
             Create();
         }
         public void Update()
-       {
+        {
             using (DataContext context = new DataContext())
             {
                 Cat selectedCat = datagrid.SelectedItem as Cat;
@@ -119,7 +121,7 @@ namespace AdoPet_Project.WPF.Pages
                 var gender = gender_txt.Text.ToLower();
                 var breed = breed_txt.Text.ToLower();
 
-                if (name != null && age != null && gender != null && breed != null)
+                if (name != "" && age != "" && gender != "" && breed != "")
                 {
                     Cat cat = context.Cats.Find(selectedCat.Id);
 
@@ -131,6 +133,9 @@ namespace AdoPet_Project.WPF.Pages
 
                     context.SaveChanges();
                     Read();
+                } else
+                {
+                    MessageBox.Show("Please enter all data.");
                 }
 
             }

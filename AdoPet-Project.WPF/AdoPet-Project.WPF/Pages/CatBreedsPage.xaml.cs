@@ -59,7 +59,7 @@ namespace AdoPet_Project.WPF.Pages
             {
                 var breedName = breedname_txt.Text;
 
-                if (breedName != null)
+                if (breedName != "")
                 {
                     context.CatBreeds.Add(new Models.CatBreed()
                     {
@@ -67,6 +67,10 @@ namespace AdoPet_Project.WPF.Pages
                     });
                     context.SaveChanges();
                     Read();
+                }
+                else
+                {
+                    MessageBox.Show("Please enter all data.");
                 }
 
             }

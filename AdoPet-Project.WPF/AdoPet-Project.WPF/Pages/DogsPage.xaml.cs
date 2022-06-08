@@ -63,7 +63,11 @@ namespace AdoPet_Project.WPF.Pages
                 var gender = gender_txt.Text.ToLower();
                 var breed = breed_txt.Text.ToLower();
 
-                if (name != null && age != null && gender != null && breed != null)
+                if (name == "" || age == "" || gender == "" || breed == "")
+                {
+                    MessageBox.Show("Please enter all data.");
+                }
+                else
                 {
                     DogBreed dogBreed;
 
@@ -98,7 +102,6 @@ namespace AdoPet_Project.WPF.Pages
 
                     context.SaveChanges();
                     Read();
-
                 }
             }
         }
@@ -117,7 +120,11 @@ namespace AdoPet_Project.WPF.Pages
                 var gender = gender_txt.Text.ToLower();
                 var breed = breed_txt.Text.ToLower();
 
-                if (name != null && age != null && gender != null && breed != null)
+                if (name == "" || age == "" || gender == "" || breed == "")
+                {
+                    MessageBox.Show("Please enter all data.");
+                }
+                else
                 {
                     Dog dog = context.Dogs.Find(selectedDog.Id);
 

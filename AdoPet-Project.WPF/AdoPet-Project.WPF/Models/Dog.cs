@@ -16,8 +16,7 @@ namespace AdoPet_Project.WPF.Models
         [Required]
         public Gender Gender { get; set; }
         public string BreedName { get; set; }
-        [Browsable(false)]
-        [Display(AutoGenerateField = false)]
+        [Required]
         public DogBreed Breed { get; set; }
 
     }
