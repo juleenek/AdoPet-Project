@@ -17,7 +17,15 @@
         <TextBox x:Name="age_txt" Text="{Binding ElementName=datagrid, Path=SelectedItem.Age, Mode=OneWay}" HorizontalAlignment="Left" Margin="84,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="gender_txt" Text="{Binding ElementName=datagrid, Path=SelectedItem.Gender, Mode=OneWay}" HorizontalAlignment="Left" Margin="84,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="breed_txt" Text="{Binding ElementName=datagrid, Path=SelectedItem.BreedName, Mode=OneWay}" HorizontalAlignment="Left" Margin="84,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <DataGrid x:Name="datagrid" BorderBrush="#d9cae8" Background="#ffff" Margin="20,209,20,48"/>
+        <DataGrid HorizontalGridLinesBrush="#d4d4d4" VerticalGridLinesBrush="#d4d4d4" x:Name="datagrid" AutoGenerateColumns="False" BorderBrush="#d4d4d4" Background="#ffff" Margin="20,209,20,48">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="Id"/>
+                <DataGridTextColumn Width="120" Binding="{Binding Name}" Header="Name"/>
+                <DataGridTextColumn Width="90" Binding="{Binding Age}" Header="Age"/>
+                <DataGridTextColumn Width="90" Binding="{Binding Gender}" Header="Gender"/>
+                <DataGridTextColumn Width="150" Binding="{Binding BreedName}" Header="Breed"/>
+            </DataGrid.Columns>
+        </DataGrid>
         <Button x:Name="createBtn" BorderBrush="#d9cae8" Background="#f7f2fc" Content="Create" HorizontalAlignment="Left" Margin="250,154,0,0" VerticalAlignment="Top" Height="31" Width="76" Click="CreateButton_Click"/>
         <Button x:Name="updateBtn" BorderBrush="#d9cae8" Background="#f7f2fc" Content="Update" HorizontalAlignment="Left" Margin="350,154,0,0" VerticalAlignment="Top" Height="31" Width="76" Click="UpdateButton_Click"/>
         <Button x:Name="deleteBtn" BorderBrush="#d9cae8" Background="#f7f2fc" Content="Delete" HorizontalAlignment="Left" Margin="450,154,0,0" VerticalAlignment="Top" Height="31" Width="76" Click="DeleteButton_Click"/>

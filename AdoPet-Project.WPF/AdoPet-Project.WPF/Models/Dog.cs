@@ -1,5 +1,6 @@
 ﻿using AdoPet_Project.WPF.Enums;
 using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace AdoPet_Project.WPF.Models
@@ -15,6 +16,8 @@ namespace AdoPet_Project.WPF.Models
         [Required]
         public Gender Gender { get; set; }
         public string BreedName { get; set; }
+        [Browsable(false)]
+        [Display(AutoGenerateField = false)]
         public DogBreed Breed { get; set; }
 
     }

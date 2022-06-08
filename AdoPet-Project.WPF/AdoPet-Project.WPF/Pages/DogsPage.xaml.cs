@@ -48,8 +48,7 @@ namespace AdoPet_Project.WPF.Pages
             using (DataContext context = new DataContext())
             {
                 DatabaseDogs = context.Dogs.ToList();
-                datagrid.ItemsSource = DatabaseDogs; 
-               
+                datagrid.ItemsSource = DatabaseDogs;
             }
         }
         /// <summary>

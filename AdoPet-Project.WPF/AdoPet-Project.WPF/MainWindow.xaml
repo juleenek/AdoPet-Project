@@ -14,7 +14,7 @@
 
         <ListBox Background="#f5f0fa" Grid.Column="0" SelectionMode="Single" SelectionChanged="sidebar_SelectionChanged" Width="100" x:Name="sidebar" Margin="0,40,0,40" BorderThickness="0">
             <local:NavButton Navlink="/Pages/DogsPage.xaml" Margin="0 0 0 10" Height="40" Content="Dogs">
-                
+
             </local:NavButton>
             <local:NavButton Navlink="/Pages/DogBreedsPage.xaml" Margin="0 0 0 10" Height="40" Content="Dog breeds">
 
@@ -28,5 +28,7 @@
         </ListBox>
 
         <Frame Grid.Column="1" x:Name="navframe" NavigationUIVisibility="Hidden" Background="#fff"/>
+        <Image Height="100" Width="100"/>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="217" Margin="67,136,0,0" VerticalAlignment="Top" Width="517"/>
     </Grid>
 </Window>
